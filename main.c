@@ -77,7 +77,7 @@ void USART_Init( unsigned int ubrr )
 	UCSR0B = (1<<RXEN0)|(1<<TXEN0);
 	/* Set frame format: 8data, 2stop bit; 2nd stop bit is ignored for the receiver */
 	UCSR0C = (1<<USBS0)|(3<<UCSZ00);
-}
+}
 void USART_Transmit( unsigned char data )
 {
 	/* Wait for empty transmit buffer */
@@ -85,7 +85,7 @@ void USART_Transmit( unsigned char data )
 	;
 	/* Put data into buffer, sends the data */
 	UDR0 = data;
-}
+}
 unsigned char USART_Receive( void )
 {
 	/* Wait for data to be received */
@@ -93,8 +93,7 @@ unsigned char USART_Receive( void )
 	;
 	/* Get and return received data from buffer */
 	return UDR0;
-}
-
+}
 
 unsigned long millis(void) {
 	unsigned long m;
